@@ -36,9 +36,9 @@ public class OAuth2Config extends AuthorizationServerConfigurerAdapter {
 	@Override
 	public void configure(ClientDetailsServiceConfigurer clients) throws Exception {
 
-		clients.inMemory().withClient("remoteclient").secret("{noop}remoteclientpassword")
+		clients.inMemory().withClient("feignclient").secret("{noop}feignclientpassword")
 				.authorizedGrantTypes("refresh_token", "password", "client_credentials")
-				.scopes("customerservice", "paymentservice");
+				.scopes("fiegnclient");
 
 	}
 
